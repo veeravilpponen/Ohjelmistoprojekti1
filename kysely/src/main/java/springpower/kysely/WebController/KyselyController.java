@@ -24,7 +24,7 @@ public class KyselyController {
 	
 	/** RESTful service to get all kysymykset **/
     @RequestMapping(value="/kysymykset", method = RequestMethod.GET)
-    public @ResponseBody List<Kysymys> studentListRest() {	
+    public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
 
