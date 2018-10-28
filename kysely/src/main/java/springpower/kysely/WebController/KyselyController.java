@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,10 +23,17 @@ public class KyselyController {
 	private KysymysRepository kysymysRepository;
 	
 	
-	/** RESTful service to get all kysymykset **/
+	/** REST palvelu jolla voidaan hakea JSON kysymykset **/
     @RequestMapping(value="/kysymykset", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
+    
+    /** palauttaa infosivun **/
+	@RequestMapping(value="/info")
+	public String info(Model model) {
+		
+		return "info";
+	}
 
 }
