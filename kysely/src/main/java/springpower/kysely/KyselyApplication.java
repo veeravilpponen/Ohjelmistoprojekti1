@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import springpower.kysely.domain.Kysely;
+import springpower.kysely.domain.KyselyRepository;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
 
@@ -19,17 +21,21 @@ public class KyselyApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner kyselyDemo(KysymysRepository krepository) {
+	public CommandLineRunner kyselyDemo(KysymysRepository kysymysrepository, KyselyRepository kyselyrepository) {
 		return (args) -> {
+			log.info("save questionnaires");
+			kyselyrepository.save(new Kysely("Kahvi"));
+			kyselyrepository.save(new Kysely("Open"));
+			
 			log.info("save questions");
-			krepository.save(new Kysymys("Ikäsi?"));
-			krepository.save(new Kysymys("Mitä opiskelet?"));
-			krepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?"));
-			krepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?"));
-			krepository.save(new Kysymys("Mitä virkistystuotteita käytät?"));
+			kysymysrepository.save(new Kysymys("Ikäsi?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
+			kysymysrepository.save(new Kysymys("Mitä opiskelet?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
+			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
+			kysymysrepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
+			kysymysrepository.save(new Kysymys("Mitä virkistystuotteita käytät?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
 			
 			log.info("fetch all questions");
-			for (Kysymys kysymys : krepository.findAll()) {
+			for (Kysymys kysymys : kysymysrepository.findAll()) {
 				log.info(kysymys.toString());
 			}
 		};
