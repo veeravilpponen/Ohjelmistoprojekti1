@@ -9,6 +9,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface KyselyRepository extends CrudRepository <Kysely, Long> {
 
-	List<Kysely> findByKyselyNimi(@Param(value="kysely") String kysely);
+	List<Kysely> findByKyselyNimi(String kysely);
 	
 }
