@@ -20,6 +20,6 @@ public class Vastaus {
 	public Long getId() { return this.id; }
 	
 	// SETTERS
-	public boolean setVastaus(String vastaus) { this.vastaus = vastaus; return true; }
-	public boolean setId(Long id) { this.id = id; return true; }
+	public void setVastaus(String vastaus) { this.vastaus = vastaus; }
+	public void setId(Long id) { this.id = id; }
 }
