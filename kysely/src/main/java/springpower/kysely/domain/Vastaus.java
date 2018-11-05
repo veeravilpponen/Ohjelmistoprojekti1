@@ -15,6 +15,17 @@ public class Vastaus {
 	private String vastaus;
 	
 	
+	//constructors
+	public Vastaus() {
+		super();
+		this.vastaus = null;
+	}
+	
+	public Vastaus(String vastaus) {
+		super();
+		this.vastaus = vastaus;
+	}
+	
 	// GETTERS
 	public String getVastaus() { return this.vastaus; }
 	public Long getId() { return this.id; }
