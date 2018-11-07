@@ -10,5 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface KysymysRepository extends CrudRepository <Kysymys, Long> {
 
+	List<Kysymys> findByKysely(Kysely kysely);
+
 
 }
