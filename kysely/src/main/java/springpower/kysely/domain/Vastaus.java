@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Vastaus {
@@ -19,9 +19,10 @@ public class Vastaus {
 	private String vastausSisus;
 
 	 @ManyToOne
-	 @JsonIgnore
+	 @JsonManagedReference
 	 @JoinColumn(name = "kysymysId")
 	 private Kysymys kysymys;
+	
 	
 	public Vastaus() {
 		super();

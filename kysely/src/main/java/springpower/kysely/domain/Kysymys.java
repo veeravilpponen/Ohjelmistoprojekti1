@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -31,7 +32,7 @@ public class Kysymys {
 	 @JoinColumn(name = "kyselyId")
 	 private Kysely kysely;
 	 
-	@JsonIgnore
+	@JsonBackReference
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
 	private List<Vastaus> vastaukset;
 	
