@@ -12,25 +12,18 @@ public class Vastaus {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String vastaus;
-	
-	
-	//constructors
-	public Vastaus() {
-		super();
-		this.vastaus = null;
+	private String vastausSisus;
+
+	@Override
+	public String toString() {
+		return "Vastaus [id=" + id + ", vastausSisus=" + vastausSisus + "]";
 	}
-	
-	public Vastaus(String vastaus) {
-		super();
-		this.vastaus = vastaus;
-	}
-	
+
 	// GETTERS
-	public String getVastaus() { return this.vastaus; }
+	public String getVastausSisus() { return this.vastausSisus; }
 	public Long getId() { return this.id; }
 	
 	// SETTERS
-	public void setVastaus(String vastaus) { this.vastaus = vastaus; }
+	public void setVastausSisus(String vastausSisus) { this.vastausSisus = vastausSisus; }
 	public void setId(Long id) { this.id = id; }
 }
