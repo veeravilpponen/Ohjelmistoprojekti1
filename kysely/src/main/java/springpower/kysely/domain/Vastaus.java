@@ -14,13 +14,13 @@ public class Vastaus {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long vastausId;
 	
 	private String vastausSisus;
 
 	 @ManyToOne
 	 @JsonIgnore
-	 @JoinColumn(name = "vastausId")
+	 @JoinColumn(name = "kysymysId")
 	 private Kysymys kysymys;
 	
 	public Vastaus() {
@@ -34,14 +34,14 @@ public class Vastaus {
 	
 	@Override
 	public String toString() {
-		return "Vastaus [id=" + id + ", vastausSisus=" + vastausSisus + "]";
+		return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + "]";
 	}
 
 	// GETTERS
 	public String getVastausSisus() { return this.vastausSisus; }
-	public Long getId() { return this.id; }
+	public Long getVastausId() { return this.vastausId; }
 	
 	// SETTERS
 	public void setVastausSisus(String vastausSisus) { this.vastausSisus = vastausSisus; }
-	public void setId(Long id) { this.id = id; }
+	public void setVastausId(Long vastausId) { this.vastausId = vastausId; }
 }
