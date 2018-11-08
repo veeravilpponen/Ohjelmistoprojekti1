@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Vastaus {
@@ -13,6 +17,20 @@ public class Vastaus {
 	private Long id;
 	
 	private String vastausSisus;
+	
+	 @ManyToOne
+	 @JsonIgnore
+	 @JoinColumn(name = "vastausId")
+	 private Kysymys kysymys;
+	
+	public Vastaus() {
+		super();
+		this.vastausSisus=null;
+	}
+	public Vastaus(String vastausSisus) {
+		super();
+		this.vastausSisus=vastausSisus;
+	}
 	
 	
 	@Override
