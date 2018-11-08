@@ -41,7 +41,7 @@ public class KysymysController {
 		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
     } */
 	
-	/** näyttää kaikki kysymykset kysely nimen perusteella **/
+	/** näyttää kaikki kyselyn kysymykset kyselyn nimen perusteella **/
 	@RequestMapping(value="/kysely/{kyselyNimi}", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyNimi") String kyselyNimi)  {	
 		
