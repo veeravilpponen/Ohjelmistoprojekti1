@@ -23,7 +23,8 @@ public class VastausController {
 	
 	@Autowired
 	private VastausRepository vastausRepository;
-		
+	
+	// pitäisi olla /kysely/{id}/kysymykset/{id}/vastaukset
 	 @RequestMapping(value="/vastaukset", method = RequestMethod.GET)
 	    public @ResponseBody List<Vastaus> vastausListRest() {	
 	        return (List<Vastaus>) vastausRepository.findAll();
