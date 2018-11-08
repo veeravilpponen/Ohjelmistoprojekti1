@@ -11,6 +11,8 @@ import springpower.kysely.domain.Kysely;
 import springpower.kysely.domain.KyselyRepository;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
+import springpower.kysely.domain.Vastaus;
+import springpower.kysely.domain.VastausRepository;
 
 @SpringBootApplication
 public class KyselyApplication {
@@ -21,7 +23,7 @@ public class KyselyApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner kyselyDemo(KysymysRepository kysymysrepository, KyselyRepository kyselyrepository) {
+	public CommandLineRunner kyselyDemo(KysymysRepository kysymysrepository, KyselyRepository kyselyrepository, VastausRepository vastausrepository) {
 		return (args) -> {
 			log.info("save questionnaires");
 			kyselyrepository.save(new Kysely("Kahvi"));
@@ -33,6 +35,9 @@ public class KyselyApplication {
 			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Mitä virkistystuotteita käytät?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			
+			
+			vastausrepository.save(new Vastaus("Ohjelmistotuotantoa",kysymysrepository.findByQuestion("Mitä opiskelet?")));
 			
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {
