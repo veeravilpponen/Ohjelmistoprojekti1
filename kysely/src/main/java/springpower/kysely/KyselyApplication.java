@@ -28,11 +28,11 @@ public class KyselyApplication {
 			kyselyrepository.save(new Kysely("Open"));
 			
 			log.info("save questions");
-			kysymysrepository.save(new Kysymys("Ikäsi?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
-			kysymysrepository.save(new Kysymys("Mitä opiskelet?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
-			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
-			kysymysrepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
-			kysymysrepository.save(new Kysymys("Mitä virkistystuotteita käytät?", kyselyrepository.findByKyselyNimi("Kahvi").get(0)));
+			kysymysrepository.save(new Kysymys("Ikäsi?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Mitä opiskelet?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Mitä virkistystuotteita käytät?", kyselyrepository.findByKyselyNimi("Kahvi")));
 			
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {

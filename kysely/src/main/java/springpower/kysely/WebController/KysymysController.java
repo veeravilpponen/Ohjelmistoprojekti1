@@ -33,12 +33,21 @@ public class KysymysController {
     } 
 	
 	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
-	@RequestMapping(value="/kysely/{kyselyId}", method = RequestMethod.GET)
+/*	@RequestMapping(value="/kysely/{kyselyId}", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyId") Long kyselyId)  {	
 		
 		Kysely kysely = kyselyRepository.findById(kyselyId).get();
 		
 		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
+    } */
+	
+	/** näyttää kaikki kysymykset kysely nimen perusteella **/
+	@RequestMapping(value="/kysely/{kyselyNimi}", method = RequestMethod.GET)
+    public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyNimi") String kyselyNimi)  {	
+		
+		Kysely kysely = kyselyRepository.findByKyselyNimi(kyselyNimi);
+		
+		return kysymysRepository.findByKysely(kysely );
     } 
 
 }
