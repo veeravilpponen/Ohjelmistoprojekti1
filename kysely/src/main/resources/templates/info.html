@@ -8,21 +8,31 @@
 	<h1>Info</h1>
 	<h2>API End Pointit</h2>
    
-	 <a href="/kysymykset">/kysymykset</a> <br/>
-	 Ensimmäiset kysymykset JSON muodossa   
+	 <a href="/kysymykset">/kysymykset</a>
+	 <p>Ensimmäiset kysymykset JSON muodossa</p>
+	 <p>{"id":3,"question":"Ikäsi?"},</p>
+	 <p>{"id":4,"question":"Mitä opiskelet?"}</p>
 	 <br>
 	 <br>
-	 <a href="/vastaukset">/vastaukset</a> <br/>
-	 Vastaukset, ei vielä toiminnassa
-	 <br>
-	 <br>
-	 <a href="/kyselyt">/kyselyt</a> <br/>
-	 Näyttää kaikki kyselyt
-	 <br>
-	 <br>
-	 <a href="/kysely/Kahvi">/kysely/Kahvi</a> <br/>
-	 Näyttää iKahvi kyselyn
 	 
+	 <a href="/vastaukset">/vastaukset</a>
+	 <p> Vastaukset, ei vielä toiminnassa</p>
+	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
+	 <br>
+	 <br>
+	 
+	 <a href="/kyselyt">/kyselyt</a>
+	 <p>Näyttää kaikki kyselyt</p>
+	 <p>{"kyselyNimi":"Kahvi"},</p>
+	 <p>{"kyselyNimi":"Open"}</p>
+	 <br>
+	 <br>
+	 
+	 <a href="/kysely/Kahvi">/kysely/Kahvi</a>
+	 <p>/kysely/{kyselyNimi}</p>
+	 <p>{kyselyNimi} kohdalle laitetaan kyselyn nimi. Tästä linkistä pääsee suoraan iKahvi kyselyyn.</p>
+	 <p>{"id":3,"question":"Ikäsi?"},</p>
+	 <p>{"id":4,"question":"Mitä opiskelet?"}</p>
 	 
 	 
 	 
