@@ -26,6 +26,14 @@ public class Kysely {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysely")
 	private List<Kysymys> kysymykset;
 
+	public Long getKyselyId() {
+		return kyselyId;
+	}
+
+	public void setKyselyId(Long kyselyId) {
+		this.kyselyId = kyselyId;
+	}
+
 	public Kysely() {
 		
 	}

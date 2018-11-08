@@ -1,11 +1,15 @@
 package springpower.kysely.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,7 +21,7 @@ public class Kysymys {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
-	private Long id;
+	private Long kysymysId;
 	
 	private String question;
 	
@@ -26,6 +30,10 @@ public class Kysymys {
 	 @JsonIgnore
 	 @JoinColumn(name = "kyselyId")
 	 private Kysely kysely;
+	 
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vastaus> vastaukset;
 	
 	//constructors
 	public Kysymys() {
@@ -33,6 +41,14 @@ public class Kysymys {
 		this.question = null;
 	}
 	
+	public List<Vastaus> getVastaukset() {
+		return vastaukset;
+	}
+
+	public void setVastaukset(List<Vastaus> vastaukset) {
+		this.vastaukset = vastaukset;
+	}
+
 	public Kysymys(String question) {
 		super();
 		this.question = question;
@@ -59,8 +75,8 @@ public class Kysymys {
 	}
 
 	
-	public Long getId() {
-		return id;
+	public Long getKysymysId() {
+		return kysymysId;
 	}
 
 	public String getQuestion() {
@@ -68,8 +84,8 @@ public class Kysymys {
 	}
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setKysymyId(Long kysymysId) {
+		this.kysymysId = kysymysId;
 	}
 
 
@@ -81,8 +97,8 @@ public class Kysymys {
 	@Override
 	public String toString() {
 		if(this.kysely != null) 
-			return "Kysymys [id=" + id + ", question=" + question + ", kysely=" + kysely + "]";
-		else return "Kysymys [id=" + id + ", question=" + question;
+			return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysely=" + kysely + "]";
+		else return "Kysymys [kysymysId=" + kysymysId + ", question=" + question;
 	}
 
 

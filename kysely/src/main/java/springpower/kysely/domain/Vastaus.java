@@ -32,6 +32,11 @@ public class Vastaus {
 		this.vastausSisus=vastausSisus;
 	}
 	
+	public Vastaus(String vastausSisus, Kysymys kysymys) {
+		super();
+		this.vastausSisus=vastausSisus;
+		this.kysymys = kysymys;
+	}
 	@Override
 	public String toString() {
 		return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + "]";

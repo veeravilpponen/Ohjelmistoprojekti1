@@ -21,22 +21,14 @@ import springpower.kysely.domain.VastausRepository;
 @Controller
 public class VastausController {
 	
+	@Autowired
+	private VastausRepository vastausRepository;
 	
-	/* @Autowired
-	private KysymysRepository kysymysRepository;*/
-	 
-	 @Autowired
-		private VastausRepository vastausRepository;
-		
+	// pitäisi olla /kysely/{id}/kysymykset/{id}/vastaukset
 	 @RequestMapping(value="/vastaukset", method = RequestMethod.GET)
 	    public @ResponseBody List<Vastaus> vastausListRest() {	
 	        return (List<Vastaus>) vastausRepository.findAll();
 	    } 
-	
-	/*@GetMapping("/vastaus")
-	public String vastaus(Model model) {
-		return "filler";
-	}*/
 	
 	 /** Vastauksen tallentaminen **/
     @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
