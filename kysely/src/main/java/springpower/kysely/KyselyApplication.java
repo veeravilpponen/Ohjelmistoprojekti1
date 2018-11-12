@@ -30,16 +30,18 @@ public class KyselyApplication {
 			kyselyrepository.save(new Kysely("Open"));
 			
 			log.info("save questions");
-			kysymysrepository.save(new Kysymys("Ikäsi?", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Mitä opiskelet?", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Kuinka tyytyväinen olet nykyiseen Haaga-Helian virkistystuotetarjontaan?", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Mitä virkistystuotteita käytät?", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Testikysymys", kyselyrepository.findByKyselyNimi("Open")));
+			kysymysrepository.save(new Kysymys("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Käytätkö jotain muita virkistystuotteita?", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Oletko merkkiuskollinen jollekin tietylle kofeiini- virkistystuotemerkille, mille?", kyselyrepository.findByKyselyNimi("Kahvi")));
 
 
-			vastausrepository.save(new Vastaus("Ohjelmistotuotantoa",kysymysrepository.findByQuestion("Mitä opiskelet?")));
+			vastausrepository.save(new Vastaus("On", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
+			vastausrepository.save(new Vastaus("Ei", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
+			vastausrepository.save(new Vastaus("Ehkä", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
+			vastausrepository.save(new Vastaus("En", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
+			vastausrepository.save(new Vastaus("Kyllä", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
 			
+	
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {
 				log.info(kysymys.toString());
