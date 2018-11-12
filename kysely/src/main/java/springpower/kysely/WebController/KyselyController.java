@@ -37,13 +37,13 @@ public class KyselyController {
 		return "info";
 	}
 	
-	
+	/** näyttää kaikki kaikki kyselyt tietokannasta **/
 	@RequestMapping(value="/kyselyt", method = RequestMethod.GET)
     public @ResponseBody List<Kysely> kyselyListRest() {	
         return (List<Kysely>) kyselyRepository.findAll();
     }
-	
-	@RequestMapping(value="/kysely/{kyselyNimi}", method = RequestMethod.GET)
+	/** näyttää kyselyn kysymykset kyselyn nimen perusteella **/
+	@RequestMapping(value="/kyselyt/{kyselyNimi}", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyNimi") String kyselyNimi)  {	
 		
 		Kysely kysely = kyselyRepository.findByKyselyNimi(kyselyNimi);
