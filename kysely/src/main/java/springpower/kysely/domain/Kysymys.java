@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
@@ -22,10 +21,10 @@ public class Kysymys {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private Long kysymysId;
 	
 	private String question;
+	private String kysymysTyyppi;
 	
 	
 	 @ManyToOne
@@ -41,7 +40,25 @@ public class Kysymys {
 	public Kysymys() {
 		super();
 		this.question = null;
+		this.kysymysTyyppi = null;
 	}
+	
+	public Kysymys(String question, String kysymysTyyppi) {
+		super();
+		this.question = question;
+		this.kysymysTyyppi = kysymysTyyppi;
+	}
+	
+	public Kysymys(String question, String kysymysTyyppi, Kysely kysely) {
+		super();
+		this.question = question;
+		this.kysymysTyyppi = kysymysTyyppi;
+		this.kysely = kysely;
+	}
+
+	
+
+	//getters and setters
 	
 	public List<Vastaus> getVastaukset() {
 		return vastaukset;
@@ -50,23 +67,15 @@ public class Kysymys {
 	public void setVastaukset(List<Vastaus> vastaukset) {
 		this.vastaukset = vastaukset;
 	}
-
-	public Kysymys(String question) {
-		super();
-		this.question = question;
-	}
 	
-	
-	public Kysymys(String question, Kysely kysely) {
-		super();
-		this.question = question;
-		this.kysely = kysely;
+	public String getKysymysTyyppi() {
+		return kysymysTyyppi;
 	}
 
-	
+	public void setKysymysTyyppi(String kysymysTyyppi) {
+		this.kysymysTyyppi = kysymysTyyppi;
+	}
 
-	//getters and setters
-	
 	public Kysely getKysely() {
 		return kysely;
 	}
@@ -99,8 +108,8 @@ public class Kysymys {
 	@Override
 	public String toString() {
 		if(this.kysely != null) 
-			return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysely=" + kysely + "]";
-		else return "Kysymys [kysymysId=" + kysymysId + ", question=" + question;
+			return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi + ", kysely=" + kysely + "]";
+		else return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi;
 	}
 
 
