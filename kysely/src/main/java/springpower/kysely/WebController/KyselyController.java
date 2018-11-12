@@ -37,7 +37,7 @@ public class KyselyController {
 		return "info";
 	}
 	
-	/** näyttää kaikki kaikki kyselyt tietokannasta **/
+	/** näyttää kaikki kyselyt tietokannasta **/
 	@RequestMapping(value="/kyselyt", method = RequestMethod.GET)
     public @ResponseBody List<Kysely> kyselyListRest() {	
         return (List<Kysely>) kyselyRepository.findAll();
@@ -50,5 +50,15 @@ public class KyselyController {
 		
 		return kysymysRepository.findByKysely(kysely );
     } 
+	
+	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
+	@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
+    public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyId") Long kyselyId)  {	
+		
+		Kysely kysely = kyselyRepository.findById(kyselyId).get();
+		
+		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
+    } 
+	
 
 }

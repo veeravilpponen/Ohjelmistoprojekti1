@@ -27,21 +27,15 @@ public class KysymysController {
 	@Autowired
 	private KyselyRepository kyselyRepository;
 	
+	
+	/** näyttää kaikki kysymykset tietokannasta **/
 	@RequestMapping(value="/kysymykset", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
 	
-	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
-/*	@RequestMapping(value="/kysely/{kyselyId}", method = RequestMethod.GET)
-    public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyId") Long kyselyId)  {	
-		
-		Kysely kysely = kyselyRepository.findById(kyselyId).get();
-		
-		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
-    } */
+
 	
-	/** näyttää kaikki kyselyn kysymykset kyselyn nimen perusteella **/
 	
 
 }
