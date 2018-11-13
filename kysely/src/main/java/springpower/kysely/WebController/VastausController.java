@@ -39,12 +39,29 @@ public class VastausController {
 	 /** Vastauksen tallentaminen **/
     @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
+    	
     	vastausRepository.save(vastaus);
     	
     	return vastaus;
     }
     
-    /** näyttää kaikki vastaukset kysymyksen  Id:n perusteella **/
+    /** tallentaa vastauksen tietylle kysymykselle kysymyksen Id:n persuteella **/
+    @RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method =  RequestMethod.POST )
+    public @ResponseBody Vastaus tallennaVastaus(@PathVariable long kysymysId,@RequestBody Vastaus vastaus){
+    
+    	Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
+    	System.out.println("VASTAUKSEN KYSYMYS " + kysymys);
+    	
+    	vastaus.setKysymys(kysymys);
+    	vastausRepository.save(vastaus);
+    	System.out.println("VASTAUS " + vastaus);
+    	return vastaus;
+    
+        }
+
+    
+    
+    /** näyttää kaikki  kysymyksen vastaukset kysymyksen Id:n perusteella **/
 	@RequestMapping(value="/kysymykset/{kysymysId}", method = RequestMethod.GET)
     public @ResponseBody List<Vastaus> kysymysById(@PathVariable("kysymysId") Long kysymysId)  {	
 		

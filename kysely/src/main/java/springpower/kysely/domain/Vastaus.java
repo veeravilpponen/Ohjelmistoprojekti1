@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -19,8 +21,8 @@ public class Vastaus {
 	private String vastausSisus;
 
 	 @ManyToOne
-	 @JsonManagedReference
 	 @JoinColumn(name = "kysymysId")
+	 @JsonBackReference
 	 private Kysymys kysymys;
 	
 	
@@ -38,16 +40,22 @@ public class Vastaus {
 		this.vastausSisus=vastausSisus;
 		this.kysymys = kysymys;
 	}
-	@Override
-	public String toString() {
-		return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + "]";
-	}
 
 	// GETTERS
 	public String getVastausSisus() { return this.vastausSisus; }
 	public Long getVastausId() { return this.vastausId; }
+	public Kysymys getKysymys() {return kysymys;}
 	
 	// SETTERS
 	public void setVastausSisus(String vastausSisus) { this.vastausSisus = vastausSisus; }
 	public void setVastausId(Long vastausId) { this.vastausId = vastausId; }
+	public void setKysymys(Kysymys kysymys) {this.kysymys = kysymys;}
+	
+	@Override
+	public String toString() {
+		if(this.kysymys != null) 
+		return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + ", kysymys=" + kysymys + "]";
+		else return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + "]";
+	}
 }
+

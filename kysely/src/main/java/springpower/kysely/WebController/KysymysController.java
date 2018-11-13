@@ -1,6 +1,7 @@
 package springpower.kysely.WebController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,17 @@ public class KysymysController {
     public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
+	
+	/** näyttää  kysymyksen vastauksineen kysymyksen Id:n perusteella **/
+	@RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method = RequestMethod.GET)
+    public @ResponseBody Optional<Kysymys> finById(@PathVariable("kysymysId") Long kysymysId)  {	
+		
+		Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
+		System.out.println("KYSYMYS" + kysymys);
+		
+		return kysymysRepository.findById(kysymysId );
+    } 
+	
 	
 
 	

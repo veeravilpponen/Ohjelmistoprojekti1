@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
@@ -26,14 +28,16 @@ public class Kysymys {
 	private String question;
 	private String kysymysTyyppi;
 	
-	
+	 
 	 @ManyToOne
-	 @JsonManagedReference
 	 @JoinColumn(name = "kyselyId")
+	 @JsonBackReference
 	 private Kysely kysely;
 	 
-	@JsonBackReference
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	@JsonManagedReference
 	private List<Vastaus> vastaukset;
 	
 	//constructors

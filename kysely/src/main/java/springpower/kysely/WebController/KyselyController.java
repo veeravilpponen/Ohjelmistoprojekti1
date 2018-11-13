@@ -1,6 +1,7 @@
 package springpower.kysely.WebController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,13 +53,24 @@ public class KyselyController {
     } 
 	
 	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
-	@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
+	/*@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyId") Long kyselyId)  {	
 		
 		Kysely kysely = kyselyRepository.findById(kyselyId).get();
 		
 		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
+    } */
+	
+	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
+	@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
+    public @ResponseBody Optional<Kysely> finById(@PathVariable("kyselyId") Long kyselyId)  {	
+		
+		Kysely kysely = kyselyRepository.findById(kyselyId).get();
+		System.out.println("KYSELY" + kysely);
+		
+		return kyselyRepository.findById(kyselyId );
     } 
+	
 	
 
 }
