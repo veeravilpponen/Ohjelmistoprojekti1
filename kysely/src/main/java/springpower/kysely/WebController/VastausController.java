@@ -37,6 +37,7 @@ public class VastausController {
 	    } 
 	
 	 /** Vastauksen tallentaminen **/
+	 // tallentaa vastauksen mutta ei saa kysymysId:tä mukaan
     @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
     	
@@ -46,7 +47,7 @@ public class VastausController {
     }
     
     /** tallentaa vastauksen tietylle kysymykselle kysymyksen Id:n persuteella **/
-    @RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method =  RequestMethod.POST )
+    @RequestMapping(value="/kysymykset/{kysymysId}/vastaus", method =  RequestMethod.POST )
     public @ResponseBody Vastaus tallennaVastaus(@PathVariable long kysymysId,@RequestBody Vastaus vastaus){
     
     	Kysymys kysymys = kysymysRepository.findById(kysymysId).get();

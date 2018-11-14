@@ -16,7 +16,7 @@
 	 <br>
 	 
 	 <a href="/vastaukset">/vastaukset</a>
-	 <p> Vastaukset, ei vielä toiminnassa</p>
+	 <p> Näyttää Kaikki tietokannassa olevat vastaukset</p>
 	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
 	 <br>
 	 <br>
@@ -33,9 +33,34 @@
 	 <p>{kyselyNimi} kohdalle laitetaan kyselyn nimi. Tästä linkistä pääsee suoraan iKahvi kyselyyn.</p>
 	 <p>{"id":3,"question":"Ikäsi?"},</p>
 	 <p>{"id":4,"question":"Mitä opiskelet?"}</p>
+	 <br>
+	 <br>
 	 
+	<a href="/kyselyt/1/kysymykset">/kyselyt/1/kysymykset</a>
+	<p>numeron kohdalle laitetaan kyselyn id. </p>
+	<p>Tästä linkistä näkee kyselyn nimen ja kaikki kyselyn kysymykset ja vastaukset mikäli niitä on tallennettu.</p>
+	<br>
+	<br>
+	
+	<a href="/kysymykset/4/vastaukset">/kysymykset/4/vastaukset</a>
+	<p>numeron kohdalle laitetaan kysymyksen id. </p>
+	<p>Tästä linkistä näkee kysymyksen ja kaikki kysymykseen annetut vastaukset mikäli niitä on tallennettu.</p>
+	<br>
+	<br>
+	
+	<a href="/kysymykset/4/vastaus">/kysymykset/4/vastaus</a>
+	<p>RequestMethod.POST eli tallennusta varten</p>
+	<p>numeron kohdalle laitetaan kysymyksen id. </p>
+	<p>Tähän linkkiin voi lähettää tietylle kysymykselle vastauksen ja se tallentuu tietokantaan</p>
+	<br>
+	<br>
 	 
-	 
+	 <a href="/vastaukset">/vastaukset</a>
+	 <p>RequestMethod.POST eli tallennusta varten</p>
+	 <p> Tähän osoitteeseen voi lähettää vastauksen ja se tallentuu tietokantaan</p>
+	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
+	 <br>
+	 <br>
 	 	
 </body>
 </html>
