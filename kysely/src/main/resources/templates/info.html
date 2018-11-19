@@ -47,26 +47,27 @@
 	 <!-- 
 	 
 	 <a href="/kysymykset">/kysymykset</a>
+
 	 <p>Ensimmäiset kysymykset JSON muodossa</p>
 	 <p>{"id":3,"kysymysSisus":"Ikäsi?"},</p>
 	 <p>{"id":4,"kysymysSisus":"Mitä opiskelet?"}</p>
 	 <br>
 	 <br>
 	 
-	 <a href="/vastaukset">/vastaukset</a>
+	 <a href="/Kysely/vastaukset">/Kysely/vastaukset</a>
 	 <p> Näyttää Kaikki tietokannassa olevat vastaukset</p>
 	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
 	 <br>
 	 <br>
 	 
-	 <a href="/kyselyt">/kyselyt</a>
+	 <a href="/Kysely/kyselyt">/Kysely/kyselyt</a>
 	 <p>Näyttää kaikki kyselyt</p>
 	 <p>{"kyselyNimi":"Kahvi"},</p>
 	 <p>{"kyselyNimi":"Open"}</p>
 	 <br>
 	 <br>
 	 
-	 <a href="/kyselyt/Kahvi">/kyselyt/Kahvi</a>
+	 <a href="/Kysely/kyselyt/Kahvi">/Kysely/kyselyt/Kahvi</a>
 	 <p>/kysely/{kyselyNimi}</p>
 	 <p>{kyselyNimi} kohdalle laitetaan kyselyn nimi. Tästä linkistä pääsee suoraan iKahvi kyselyyn.</p>
 	 <p>{"id":3,"kysymysSisus":"Ikäsi?"},</p>
@@ -76,5 +77,21 @@
 	 
 	  -->
 	 </div>
+=======
+	
+	<a href="/Kysely/kysymykset/4/vastaukset">/Kysely/kysymykset/4/vastaukset</a>
+	<p>numeron kohdalle laitetaan kysymyksen id. </p>
+	<p>Tästä linkistä näkee kysymyksen ja kaikki kysymykseen annetut vastaukset mikäli niitä on tallennettu.</p>
+	<br>
+	<br>
+	 
+	 <a href="/Kysely/vastaukset">/Kysely/vastaukset</a>
+	 <p>RequestMethod.POST eli tallennusta varten</p>
+	 <p> Tähän osoitteeseen voi lähettää vastauksen ja se tallentuu tietokantaan</p>
+	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
+	 <br>
+	 <br>
+	 	
+>>>>>>> linkit oikein
 </body>
 </html>
