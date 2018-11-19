@@ -32,19 +32,19 @@ public class KyselyController {
 	private KysymysRepository kysymysRepository;
     
     // palauttaa infosivun
-	@GetMapping({"/info", "/"})
+	@GetMapping({"/Kysely/info", "/"})
 	public String info(Model model) {
 		
 		return "info";
 	}
 	
 	/** näyttää kaikki kyselyt tietokannasta **/
-	@RequestMapping(value="/kyselyt", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kyselyt", method = RequestMethod.GET)
     public @ResponseBody List<Kysely> kyselyListRest() {	
         return (List<Kysely>) kyselyRepository.findAll();
     }
 	/** näyttää kyselyn kysymykset kyselyn nimen perusteella **/
-	@RequestMapping(value="/kyselyt/{kyselyNimi}", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kyselyt/{kyselyNimi}", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyNimi") String kyselyNimi)  {	
 		
 		Kysely kysely = kyselyRepository.findByKyselyNimi(kyselyNimi);
@@ -62,7 +62,7 @@ public class KyselyController {
     } */
 	
 	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
-	@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
     public @ResponseBody Optional<Kysely> finById(@PathVariable("kyselyId") Long kyselyId)  {	
 		
 		Kysely kysely = kyselyRepository.findById(kyselyId).get();
