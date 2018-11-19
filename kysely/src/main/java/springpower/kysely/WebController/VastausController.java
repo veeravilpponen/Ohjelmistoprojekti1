@@ -33,14 +33,14 @@ public class VastausController {
 	
 	/** näyttää kaikki kaikki vastaukset tietokannasta**/
 	// pitäisi olla /kysely/{id}/kysymykset/{id}/vastaukset
-	 @RequestMapping(value="/vastaukset", method = RequestMethod.GET)
+	 @RequestMapping(value="/Kysely/vastaukset", method = RequestMethod.GET)
 	    public @ResponseBody List<Vastaus> vastausListRest() {	
 	        return (List<Vastaus>) vastausRepository.findAll();
 	    } 
 	
 	 /** Vastauksen tallentaminen **/
 	 // tallentaa vastauksen mutta ei saa kysymysId:tä mukaan
-    @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
+    @RequestMapping(value="/Kysely/vastaukset", method =  RequestMethod.POST )
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
     	
     	vastausRepository.save(vastaus);
@@ -70,7 +70,7 @@ public class VastausController {
     }
     
     /** tallentaa vastauksen tietylle kysymykselle kysymyksen Id:n persuteella **/
-    @RequestMapping(value="/kysymykset/{kysymysId}/vastaus", method =  RequestMethod.POST )
+    @RequestMapping(value="/Kysely/kysymykset/{kysymysId}/vastaus", method =  RequestMethod.POST )
     public @ResponseBody Vastaus tallennaVastaus(@PathVariable long kysymysId,@RequestBody Vastaus vastaus){
     
     	Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
@@ -97,7 +97,7 @@ public class VastausController {
         }
     
     /** näyttää kaikki  kysymyksen vastaukset kysymyksen Id:n perusteella **/
-	@RequestMapping(value="/kysymykset/{kysymysId}", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kysymykset/{kysymysId}", method = RequestMethod.GET)
     public @ResponseBody List<Vastaus> kysymysById(@PathVariable("kysymysId") Long kysymysId)  {	
 		
 		System.out.println("KYSYMYSID!!!" + kysymysId);
