@@ -21,7 +21,7 @@ public class KysymysController {
 	private KysymysRepository kysymysRepository;
 	
 	/** näyttää kaikki kysymykset tietokannasta **/
-	@RequestMapping(value="/kysymykset", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kysymykset", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
