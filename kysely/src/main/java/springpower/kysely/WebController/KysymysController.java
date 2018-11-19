@@ -30,13 +30,13 @@ public class KysymysController {
 	
 	
 	/** näyttää kaikki kysymykset tietokannasta **/
-	@RequestMapping(value="/kysymykset", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kysymykset", method = RequestMethod.GET)
     public @ResponseBody List<Kysymys> kysymysListRest() {	
         return (List<Kysymys>) kysymysRepository.findAll();
     } 
 	
 	/** näyttää  kysymyksen vastauksineen kysymyksen Id:n perusteella **/
-	@RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method = RequestMethod.GET)
+	@RequestMapping(value="/Kysely/kysymykset/{kysymysId}/vastaukset", method = RequestMethod.GET)
     public @ResponseBody Optional<Kysymys> finById(@PathVariable("kysymysId") Long kysymysId)  {	
 		
 		Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
