@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import springpower.kysely.domain.Kysely;
 import springpower.kysely.domain.KyselyRepository;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
+import springpower.kysely.domain.Vaihtoehto;
+import springpower.kysely.domain.VaihtoehtoRepository;
 
 
 
@@ -26,7 +27,7 @@ public class KysymysController {
 	private KysymysRepository kysymysRepository;
 	
 	@Autowired
-	private KyselyRepository kyselyRepository;
+	private VaihtoehtoRepository vaihtoehtoRepository;
 	
 	
 	/** näyttää kaikki kysymykset tietokannasta **/
@@ -37,7 +38,7 @@ public class KysymysController {
 	
 	/** näyttää  kysymyksen vastauksineen kysymyksen Id:n perusteella **/
 	@RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method = RequestMethod.GET)
-    public @ResponseBody Optional<Kysymys> finById(@PathVariable("kysymysId") Long kysymysId)  {	
+    public @ResponseBody Optional<Kysymys> naytaKysymyksenVastaukset(@PathVariable("kysymysId") Long kysymysId)  {	
 		
 		Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
 		System.out.println("KYSYMYS" + kysymys);
@@ -45,8 +46,16 @@ public class KysymysController {
 		return kysymysRepository.findById(kysymysId );
     } 
 	
-	
-
+	/*
+	@RequestMapping(value="/kysymykset/{kysymysId}/vaihtoehdot", method = RequestMethod.GET)
+	public @ResponseBody Optional<Vaihtoehto> naytaKysymyksenVaihtoehdot(@PathVariable("kysymysId") Long kysymysId) {
+		
+		Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
+		System.out.println("KYSYMYS" + kysymys);
+		
+		return vaihtoehtoRepository.findById(kysymysId);
+	}
+	*/
 	
 	
 

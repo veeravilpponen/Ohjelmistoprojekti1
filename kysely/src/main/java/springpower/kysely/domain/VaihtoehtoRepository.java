@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface VaihtoehtoRepository extends CrudRepository <Vaihtoehto, Long> {
 	
-	List<Vaihtoehto> findByKysely(Kysymys kysymys);
+	/** Hakee vaihtoehdot kysymyksen perusteella **/
+	List<Vaihtoehto> findByKysymys(Kysymys kysymys);
 	
 	
 }
