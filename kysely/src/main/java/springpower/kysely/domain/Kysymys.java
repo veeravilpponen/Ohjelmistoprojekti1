@@ -28,13 +28,15 @@ public class Kysymys {
 	private String question;
 	private String kysymysTyyppi;
 	
-	 
+	
 	 @ManyToOne
 	 @JoinColumn(name = "kyselyId")
 	 @JsonBackReference
 	 private Kysely kysely;
 	 
-	
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vaihtoehto> vaihtoehdot;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
 	@JsonManagedReference
@@ -59,8 +61,13 @@ public class Kysymys {
 		this.kysymysTyyppi = kysymysTyyppi;
 		this.kysely = kysely;
 	}
-
 	
+	public Kysymys(String question, String kysymysTyyppi, Kysely kysely, Vaihtoehto vaihtoehdot) {
+		super();
+		this.question = question;
+		this.kysymysTyyppi = kysymysTyyppi;
+		this.kysely = kysely;
+	}
 
 	//getters and setters
 	
@@ -107,6 +114,14 @@ public class Kysymys {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
+	
+	public List<Vaihtoehto> getVaihtoehdot() {
+		return vaihtoehdot;
+	}
+
+	public void setVaihtoehdot(List<Vaihtoehto> vaihtoehdot) {
+		this.vaihtoehdot = vaihtoehdot;
+	}
 
 
 	@Override
@@ -115,6 +130,8 @@ public class Kysymys {
 			return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi + ", kysely=" + kysely + "]";
 		else return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi;
 	}
+
+	
 
 
 	
