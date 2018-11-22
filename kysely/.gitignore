@@ -40,7 +40,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-application.properties
+*.properties
 
 # External tool builders
 .externalToolBuilders/
