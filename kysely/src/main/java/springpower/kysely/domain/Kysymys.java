@@ -62,11 +62,12 @@ public class Kysymys {
 		this.kysely = kysely;
 	}
 	
-	public Kysymys(String question, String kysymysTyyppi, Kysely kysely, Vaihtoehto vaihtoehdot) {
+	public Kysymys(String question, String kysymysTyyppi, Kysely kysely, List<Vaihtoehto> vaihtoehdot) {
 		super();
 		this.question = question;
 		this.kysymysTyyppi = kysymysTyyppi;
 		this.kysely = kysely;
+		this.vaihtoehdot = vaihtoehdot;
 	}
 
 	//getters and setters
