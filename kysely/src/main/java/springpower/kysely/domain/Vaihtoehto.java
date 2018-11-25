@@ -1,5 +1,6 @@
 package springpower.kysely.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
+@Entity
 public class Vaihtoehto {
 	
 	@Id
@@ -21,6 +22,11 @@ public class Vaihtoehto {
 	 @JsonBackReference
 	 private Kysymys kysymys;
 	 
+	 @ManyToOne
+	 @JoinColumn(name = "vastausId")
+	 @JsonBackReference
+	 private Vastaus vastaus;
+	 
 		public Vaihtoehto() {
 			super();
 			this.setVaihtoehtoSisus(null);
@@ -32,6 +38,12 @@ public class Vaihtoehto {
 		}
 		
 		public Vaihtoehto(String vaihtoehtoSisus, Kysymys kysymys) {
+			super();
+			this.setVaihtoehtoSisus(vaihtoehtoSisus);
+			this.kysymys = kysymys;
+		}
+		
+		public Vaihtoehto(String vaihtoehtoSisus, Kysymys kysymys, Vastaus vastaus) {
 			super();
 			this.setVaihtoehtoSisus(vaihtoehtoSisus);
 			this.kysymys = kysymys;

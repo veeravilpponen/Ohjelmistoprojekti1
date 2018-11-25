@@ -29,8 +29,9 @@ public class Vastaus {
 	 @JsonBackReference
 	 private Kysymys kysymys;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "vaihtoehto")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "vastaus")
 	private List<Vaihtoehto> valitutVastaukset;
+	
 	
 	public Vastaus() {
 		super();
@@ -46,16 +47,38 @@ public class Vastaus {
 		this.vastausSisus=vastausSisus;
 		this.kysymys = kysymys;
 	}
+	
+	public Vastaus(String vastausSisus,List<Vaihtoehto> valitutVastaukset, Kysymys kysymys) {
+		super();
+		this.vastausSisus=vastausSisus;
+		this.kysymys = kysymys;
+		this.valitutVastaukset = valitutVastaukset;
+	}
+	
+	public Vastaus(List<Vaihtoehto> valitutVastaukset, Kysymys kysymys) {
+		super();
+		this.valitutVastaukset = valitutVastaukset;
+		this.kysymys = kysymys;
+	}
 
 	// GETTERS
 	public String getVastausSisus() { return this.vastausSisus; }
 	public Long getVastausId() { return this.vastausId; }
 	public Kysymys getKysymys() {return kysymys;}
 	
+	public List<Vaihtoehto> getValitutVastaukset() {
+		return valitutVastaukset;
+	}
+	
+	
 	// SETTERS
 	public void setVastausSisus(String vastausSisus) { this.vastausSisus = vastausSisus; }
 	public void setVastausId(Long vastausId) { this.vastausId = vastausId; }
 	public void setKysymys(Kysymys kysymys) {this.kysymys = kysymys;}
+	
+	public void setValitutVastaukset(List<Vaihtoehto> valitutVastaukset) {
+		this.valitutVastaukset = valitutVastaukset;
+	}
 	
 	@Override
 	public String toString() {

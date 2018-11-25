@@ -33,7 +33,7 @@ public class KyselyApplication {
 			
 			log.info("save questions");
 			kysymysrepository.save(new Kysymys("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Käytätkö jotain muita virkistystuotteita?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Käytätkö jotain muita virkistystuotteita?", "Valinta", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Oletko merkkiuskollinen jollekin tietylle kofeiini- virkistystuotemerkille, mille?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
 
 			vaihtoehtorepository.save(new Vaihtoehto("kyllä", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
@@ -46,6 +46,7 @@ public class KyselyApplication {
 			vastausrepository.save(new Vastaus("En", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
 			vastausrepository.save(new Vastaus("Kyllä", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
 			
+		
 	
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {
