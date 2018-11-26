@@ -15,7 +15,7 @@ public class Vaihtoehto {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long vaihtoehtoId;
 	
-	private String vaihtoehtoSisus;
+   private String vaihtoehtoSisus;
 	
 	 @ManyToOne
 	 @JoinColumn(name = "kysymysId")
