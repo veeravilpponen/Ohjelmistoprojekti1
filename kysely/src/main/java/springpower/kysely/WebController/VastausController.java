@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import springpower.kysely.domain.Kysely;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
+import springpower.kysely.domain.Valittu;
+import springpower.kysely.domain.ValittuRepository;
 import springpower.kysely.domain.Vastaus;
 import springpower.kysely.domain.VastausRepository;
 
@@ -28,6 +30,10 @@ public class VastausController {
 	
 	@Autowired
 	private KysymysRepository kysymysRepository;
+	
+	
+	@Autowired
+	private ValittuRepository valittuRepository;
 	
 	/** näyttää kaikki kaikki vastaukset tietokannasta**/
 	// pitäisi olla /kysely/{id}/kysymykset/{id}/vastaukset
@@ -57,9 +63,18 @@ public class VastausController {
     	vastausRepository.save(vastaus);
     	System.out.println("VASTAUS " + vastaus);
     	
+    	// EI VIELÄ TESTATTU
     	// jos monivalintavastaus tallennetaan valitut kantaan
+    	List<Valittu> valitut = vastaus.getValitutVastaukset();
+    	System.out.println("Valitut VASTAUKSET!" + valitut);
     	
-    	
+    	// for loop tallennusta varten?
+    	for(int i = 0; i< valitut.size(); i++) {
+    		
+    		
+    		valittuRepository.save(valitut.get(i));
+    		System.out.println("INDEX!!"+valitut.get(i));
+    	};
     	return vastaus;
     
         }
