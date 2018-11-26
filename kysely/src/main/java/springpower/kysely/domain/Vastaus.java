@@ -86,5 +86,7 @@ public class Vastaus {
 		return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + ", kysymys=" + kysymys + "]";
 		else return "Vastaus [vastausId=" + vastausId + ", vastausSisus=" + vastausSisus + "]";
 	}
+	
+	
 }
 

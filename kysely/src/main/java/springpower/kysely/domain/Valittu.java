@@ -17,6 +17,14 @@ public class Valittu {
 	
 	 private String valittuSisus;
 	 
+	 @ManyToOne
+	 @JoinColumn(name = "vastausId")
+	 @JsonIgnore
+	 private Vastaus vastaus;
+	 
+	
+
+	//Getter and Setters
 	 public String getValittuSisus() {
 		return valittuSisus;
 	}
@@ -32,9 +40,11 @@ public class Valittu {
 	public void setVastaus(Vastaus vastaus) {
 		this.vastaus = vastaus;
 	}
+	
+	 @Override
+		public String toString() {
+			return "Valittu [valittuId=" + valittuId + ", valittuSisus=" + valittuSisus + ", vastaus=" + vastaus + "]";
+		}
 
-	@ManyToOne
-	 @JoinColumn(name = "vastausId")
-	 @JsonIgnore
-	 private Vastaus vastaus;
+	
 }

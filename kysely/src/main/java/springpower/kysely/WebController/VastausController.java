@@ -64,15 +64,16 @@ public class VastausController {
     	System.out.println("VASTAUS " + vastaus);
     	
     	// EI VIELÄ TESTATTU
-    	// jos monivalintavastaus tallennetaan valitut kantaan
+    	// jos monivalintavastaus tallennetaan valitut kantaan rating.setBeer(beer);
     	List<Valittu> valitut = vastaus.getValitutVastaukset();
     	System.out.println("Valitut VASTAUKSET!" + valitut);
     	
     	// for loop tallennusta varten?
     	for(int i = 0; i< valitut.size(); i++) {
-    		
-    		
-    		valittuRepository.save(valitut.get(i));
+    	
+    		Valittu valittu = valitut.get(i);
+    		valittu.setVastaus(vastaus);
+    		valittuRepository.save(valittu);
     		System.out.println("INDEX!!"+valitut.get(i));
     	};
     	return vastaus;
