@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Vaihtoehto {
 	
@@ -22,10 +23,11 @@ public class Vaihtoehto {
 	 @JsonBackReference
 	 private Kysymys kysymys;
 	 
-	 @ManyToOne
+	/* siirretty valittu luokkaan
+	 * @ManyToOne
 	 @JoinColumn(name = "vastausId")
-	 @JsonBackReference
-	 private Vastaus vastaus;
+	 @JsonIgnore
+	 private Vastaus vastaus;*/
 	 
 		public Vaihtoehto() {
 			super();

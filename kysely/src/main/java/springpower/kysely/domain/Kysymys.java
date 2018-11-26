@@ -39,7 +39,7 @@ public class Kysymys {
 	private List<Vaihtoehto> vaihtoehdot;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
-	@JsonManagedReference
+	//@JsonManagedReference
 	private List<Vastaus> vastaukset;
 	
 	//constructors

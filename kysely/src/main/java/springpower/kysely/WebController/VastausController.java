@@ -56,6 +56,10 @@ public class VastausController {
     	vastaus.setKysymys(kysymys);
     	vastausRepository.save(vastaus);
     	System.out.println("VASTAUS " + vastaus);
+    	
+    	// jos monivalintavastaus tallennetaan valitut kantaan
+    	
+    	
     	return vastaus;
     
         }

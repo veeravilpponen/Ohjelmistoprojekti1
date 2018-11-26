@@ -30,7 +30,7 @@ public class Vastaus {
 	 private Kysymys kysymys;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "vastaus")
-	private List<Vaihtoehto> valitutVastaukset;
+	private List<Valittu> valitutVastaukset;
 	
 	
 	public Vastaus() {
@@ -48,14 +48,14 @@ public class Vastaus {
 		this.kysymys = kysymys;
 	}
 	
-	public Vastaus(String vastausSisus,List<Vaihtoehto> valitutVastaukset, Kysymys kysymys) {
+	public Vastaus(String vastausSisus,List<Valittu> valitutVastaukset, Kysymys kysymys) {
 		super();
 		this.vastausSisus=vastausSisus;
 		this.kysymys = kysymys;
 		this.valitutVastaukset = valitutVastaukset;
 	}
 	
-	public Vastaus(List<Vaihtoehto> valitutVastaukset, Kysymys kysymys) {
+	public Vastaus(List<Valittu> valitutVastaukset, Kysymys kysymys) {
 		super();
 		this.valitutVastaukset = valitutVastaukset;
 		this.kysymys = kysymys;
@@ -66,7 +66,7 @@ public class Vastaus {
 	public Long getVastausId() { return this.vastausId; }
 	public Kysymys getKysymys() {return kysymys;}
 	
-	public List<Vaihtoehto> getValitutVastaukset() {
+	public List<Valittu> getValitutVastaukset() {
 		return valitutVastaukset;
 	}
 	
@@ -76,7 +76,7 @@ public class Vastaus {
 	public void setVastausId(Long vastausId) { this.vastausId = vastausId; }
 	public void setKysymys(Kysymys kysymys) {this.kysymys = kysymys;}
 	
-	public void setValitutVastaukset(List<Vaihtoehto> valitutVastaukset) {
+	public void setValitutVastaukset(List<Valittu> valitutVastaukset) {
 		this.valitutVastaukset = valitutVastaukset;
 	}
 	
