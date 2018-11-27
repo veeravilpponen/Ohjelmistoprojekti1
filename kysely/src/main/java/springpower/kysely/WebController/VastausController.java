@@ -47,8 +47,29 @@ public class VastausController {
     @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
     	
-    	vastausRepository.save(vastaus);
     	
+    /*	vastausRepository.save(vastaus);
+    	System.out.println("VASTAUS " + vastaus);
+    	
+    	Kysymys kysymys = vastaus.getKysymys();
+    	System.out.println("VASTAUKSEN KYSYMYS " + kysymys);
+    	vastaus.setKysymys(kysymys);
+    	
+    	// jos monivalintavastaus tallennetaan valitut kantaan 
+    	List<Valittu> valitut = vastaus.getValitutVastaukset();
+    	System.out.println("Valitut VASTAUKSET!" + valitut);
+    	
+    	// for loop tallennusta varten?
+    	for(int i = 0; i< valitut.size(); i++) {
+    	
+    		Valittu valittu = valitut.get(i);
+    		valittu.setVastaus(vastaus);
+    		valittuRepository.save(valittu);
+    		System.out.println("INDEX!!"+valitut.get(i));
+    	};
+    	return vastaus;*/
+    	vastausRepository.save(vastaus);
+    	System.out.println("VASTAUS" + vastaus);
     	return vastaus;
     }
     

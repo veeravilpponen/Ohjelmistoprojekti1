@@ -48,7 +48,7 @@ public class Vastaus {
 		this.kysymys = kysymys;
 	}
 	
-	public Vastaus(String vastausSisus,List<Valittu> valitutVastaukset, Kysymys kysymys) {
+	public Vastaus(String vastausSisus, Kysymys kysymys,List<Valittu> valitutVastaukset) {
 		super();
 		this.vastausSisus=vastausSisus;
 		this.kysymys = kysymys;
