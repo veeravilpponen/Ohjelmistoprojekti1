@@ -1,4 +1,4 @@
-package springpower.kysely;
+/*package springpower.kysely;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,4 +13,4 @@ public class KyselyApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/
