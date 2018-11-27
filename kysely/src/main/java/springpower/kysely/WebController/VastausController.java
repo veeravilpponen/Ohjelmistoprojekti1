@@ -56,21 +56,22 @@ public class VastausController {
     	vastaus.setKysymys(kysymys);
     	
     	// jos monivalintavastaus tallennetaan valitut kantaan 
-    	List<Valittu> valitut = vastaus.getValitutVastaukset();
-    	System.out.println("Valitut VASTAUKSET!" + valitut);
+    	if(vastaus.getValitutVastaukset() != null) {
+    		List<Valittu> valitut = vastaus.getValitutVastaukset();
+        	System.out.println("Valitut VASTAUKSET!" + valitut);
+        	
+        	// valittujen vaihtoehtojen tallennus vastaukseen
+        	for(int i = 0; i< valitut.size(); i++) {
+        	
+        		Valittu valittu = valitut.get(i);
+        		valittu.setVastaus(vastaus);
+        		valittuRepository.save(valittu);
+        		System.out.println("INDEX!!"+valitut.get(i));
+        	};
+    	}
     	
-    	// for loop tallennusta varten?
-    	for(int i = 0; i< valitut.size(); i++) {
-    	
-    		Valittu valittu = valitut.get(i);
-    		valittu.setVastaus(vastaus);
-    		valittuRepository.save(valittu);
-    		System.out.println("INDEX!!"+valitut.get(i));
-    	};
     	return vastaus;
-    /*	vastausRepository.save(vastaus);
-    	System.out.println("VASTAUS" + vastaus);
-    	return vastaus;*/
+  
     }
     
     /** tallentaa vastauksen tietylle kysymykselle kysymyksen Id:n persuteella **/

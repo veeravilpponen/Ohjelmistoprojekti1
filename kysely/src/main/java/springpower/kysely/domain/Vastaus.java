@@ -46,6 +46,7 @@ public class Vastaus {
 		super();
 		this.vastausSisus=vastausSisus;
 		this.kysymys = kysymys;
+		
 	}
 	
 	public Vastaus(String vastausSisus, Kysymys kysymys,List<Valittu> valitutVastaukset) {
@@ -54,6 +55,8 @@ public class Vastaus {
 		this.kysymys = kysymys;
 		this.valitutVastaukset = valitutVastaukset;
 	}
+	
+	
 	
 	public Vastaus(List<Valittu> valitutVastaukset, Kysymys kysymys) {
 		super();

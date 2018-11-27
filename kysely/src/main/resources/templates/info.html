@@ -8,7 +8,7 @@
 	<h1>Info</h1>
 	<h2>API End Pointit</h2>
 	
-	<h3>Tarvittavat</h3>
+	<h3>Kaikkien tietojen hakemista varten</h3>
 	
 	<a href="/kyselyt/1/kysymykset">/kyselyt/1/kysymykset</a>
 	
@@ -18,13 +18,24 @@
 	<br>
 	<br>
 	
-	<a href="/kysymykset/4/vastaus">/kysymykset/4/vastaus</a>
-	<p>RequestMethod.POST eli vastauksen tallennusta varten.</p>
-	<p>{"vastausSisus":"vastaus"}</p>
-	<p>Numeron kohdalle laitetaan kysymyksen id.</p>
-	<p>Tähän linkkiin voi lähettää tietylle kysymykselle vastauksen ja se tallentuu tietokantaan</p>
-	<br>
-	<br>
+	<h3>Vastauksen lähetystä varten</h3>
+	
+	<a href="/vastaukset">/vastaukset</a>
+	 <p>RequestMethod.POST eli tallennusta varten</p>
+	 <p> Tähän osoitteeseen voi lähettää kaikkkia vastaustyyppejä ja ne tallentuvat tietokantaan</p>
+	
+	<p>Teksti</p>
+	<p>{"vastausSisus": "Tarvitaan edullisempaa kahvia",
+          "kysymys":{"kysymysId": 5}}</p>
+	<p>Monivalinta</p>
+	 <p>{"kysymys":{"kysymysId": 4},
+          "valitutVastaukset": [{ "valittuSisus": "Kahvi"},{"valittuSisus": "Tee"}] }</p>
+     <p>Valinta</p>
+     <p>{
+          "kysymys":{"kysymysId": 3},
+          "valitutVastaukset": [{"valittuSisus": "Harvoin"}]}</p>
+	 <br>
+	 <br>
 	
 	<h3>Extrat</h3>
    
@@ -62,12 +73,7 @@
 	<br>
 	<br>
 	 
-	 <a href="/vastaukset">/vastaukset</a>
-	 <p>RequestMethod.POST eli tallennusta varten</p>
-	 <p> Tähän osoitteeseen voi lähettää vastauksen ja se tallentuu tietokantaan</p>
-	 <p>{"vastausSisus":"Kahvi on hyvää"},</p>
-	 <br>
-	 <br>
+	 
 	 	
 </body>
 </html>
