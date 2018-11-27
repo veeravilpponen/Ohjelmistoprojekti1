@@ -48,7 +48,7 @@ public class VastausController {
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
     	
     	
-    /*	vastausRepository.save(vastaus);
+    	vastausRepository.save(vastaus);
     	System.out.println("VASTAUS " + vastaus);
     	
     	Kysymys kysymys = vastaus.getKysymys();
@@ -67,10 +67,10 @@ public class VastausController {
     		valittuRepository.save(valittu);
     		System.out.println("INDEX!!"+valitut.get(i));
     	};
-    	return vastaus;*/
-    	vastausRepository.save(vastaus);
-    	System.out.println("VASTAUS" + vastaus);
     	return vastaus;
+    /*	vastausRepository.save(vastaus);
+    	System.out.println("VASTAUS" + vastaus);
+    	return vastaus;*/
     }
     
     /** tallentaa vastauksen tietylle kysymykselle kysymyksen Id:n persuteella **/
