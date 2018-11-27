@@ -40,7 +40,7 @@ public class KysymysController {
 
 	@RequestMapping(value="/kysymykset/{kysymysId}/vastaukset", method = RequestMethod.GET)
     public @ResponseBody Optional<Kysymys> naytaKysymyksenVastaukset(@PathVariable("kysymysId") Long kysymysId)  {	
-	
+
 		Kysymys kysymys = kysymysRepository.findById(kysymysId).get();
 		System.out.println("KYSYMYS" + kysymys);
 		
