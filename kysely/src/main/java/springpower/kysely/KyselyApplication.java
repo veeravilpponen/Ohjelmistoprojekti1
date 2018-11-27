@@ -36,10 +36,17 @@ public class KyselyApplication {
 			kysymysrepository.save(new Kysymys("Käytätkö jotain muita virkistystuotteita?", "Valinta", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Oletko merkkiuskollinen jollekin tietylle kofeiini- virkistystuotemerkille, mille?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
 
-			vaihtoehtorepository.save(new Vaihtoehto("kyllä", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
-			vaihtoehtorepository.save(new Vaihtoehto("ei", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
-			vaihtoehtorepository.save(new Vaihtoehto("ehkä", kysymysrepository.findByQuestion("Käytätkö jotain muita virkistystuotteita?")));
-
+			
+			vaihtoehtorepository.save(new Vaihtoehto("En koskaan", kysymysrepository.findByQuestion("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Harvoin", kysymysrepository.findByQuestion("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Usein", kysymysrepository.findByQuestion("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Päivittäin", kysymysrepository.findByQuestion("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Kahvi", kysymysrepository.findByQuestion("Mitä kofeiinituotteita käytät?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Tee", kysymysrepository.findByQuestion("Mitä kofeiinituotteita käytät?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Limu", kysymysrepository.findByQuestion("Mitä kofeiinituotteita käytät?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Kofeiinitabletit", kysymysrepository.findByQuestion("Mitä kofeiinituotteita käytät?")));
+			
+			
 			vastausrepository.save(new Vastaus("On", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
 			vastausrepository.save(new Vastaus("Ei", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
 			vastausrepository.save(new Vastaus("Ehkä", kysymysrepository.findByQuestion("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
