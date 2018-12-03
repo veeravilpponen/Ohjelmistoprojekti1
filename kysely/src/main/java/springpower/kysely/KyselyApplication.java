@@ -58,6 +58,16 @@ public class KyselyApplication {
 			vaihtoehtorepository.save(new Vaihtoehto("36-40", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
 			vaihtoehtorepository.save(new Vaihtoehto("yli 41", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
 			
+			vaihtoehtorepository.save(new Vaihtoehto("Finanssi- ja talousasiantuntijan koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Hotelli- ja ravintola-alan liikkeenjohdon koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Journalismikoulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Liikunnan ja vapaa-ajan koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Matkailun koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			
+			
 			vaihtoehtorepository.save(new Vaihtoehto("En koskaan", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Harvoin", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Usein", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
