@@ -64,19 +64,37 @@ public class KyselyApplication {
 			vaihtoehtorepository.save(new Vaihtoehto("Journalismikoulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Liikunnan ja vapaa-ajan koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Matkailun koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
-			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
-			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
-			
+			vaihtoehtorepository.save(new Vaihtoehto("Matkailun liikkeenjohdon koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Myynnin ja visuaalisen markkinoinnin koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Myyntityön koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Ruokatuotannon johtamisen koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Tietojenkäsittelyn koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("En oppiskele", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
 			
 			vaihtoehtorepository.save(new Vaihtoehto("En koskaan", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Harvoin", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Usein", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Päivittäin", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin eri mieltä", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin eri mieltä", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Ei samaa eikä eri mieltä", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin samaa mieltä", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin samaa mieltä", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			vaihtoehtorepository.save(new Vaihtoehto("En osaa sanoa", kysymysrepository.findByKysymysSisus("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?")));
+			
 			vaihtoehtorepository.save(new Vaihtoehto("Kahvi", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Tee", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Limu", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Kofeiinitabletit", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
-	
+
+			vaihtoehtorepository.save(new Vaihtoehto("Monta kupillista päivässä", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Kupillisen päivässä", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Muutaman kupillisen viikossa", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Harvemmin", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
+			vaihtoehtorepository.save(new Vaihtoehto("En osaa sanoa", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
+			
+			
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {
 				log.info(kysymys.toString());
