@@ -51,6 +51,13 @@ public class KyselyApplication {
 			
 			vastausrepository.save(new Vastaus("Tarvitaan edullisempaa kahvia", kysymysrepository.findByKysymysSisus("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
 			
+			vaihtoehtorepository.save(new Vaihtoehto("Alle 20", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("21-25", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("26-30", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("31-35", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("36-40", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("yli 41", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			
 			vaihtoehtorepository.save(new Vaihtoehto("En koskaan", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Harvoin", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Usein", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
