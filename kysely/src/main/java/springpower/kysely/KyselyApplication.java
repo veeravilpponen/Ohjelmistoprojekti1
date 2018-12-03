@@ -33,8 +33,8 @@ public class KyselyApplication {
 			kyselyrepository.save(new Kysely("Open"));
 			
 			log.info("save questions");
-			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista kofeiinituotteita?", "Valinta", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Mitä kofeiinituotteita käytät?", "Monivalinta", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista kofeiinituotteita?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Mitä kofeiinituotteita käytät?", "Checkbox", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
 
 
