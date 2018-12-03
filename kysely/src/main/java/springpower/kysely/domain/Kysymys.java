@@ -25,7 +25,7 @@ public class Kysymys {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long kysymysId;
 	
-	private String question;
+	private String kysymysSisus;
 	private String kysymysTyyppi;
 	
 	
@@ -45,26 +45,26 @@ public class Kysymys {
 	//constructors
 	public Kysymys() {
 		super();
-		this.question = null;
+		this.kysymysSisus = null;
 		this.kysymysTyyppi = null;
 	}
 	
-	public Kysymys(String question, String kysymysTyyppi) {
+	public Kysymys(String kysymysSisus, String kysymysTyyppi) {
 		super();
-		this.question = question;
+		this.kysymysSisus = kysymysSisus;
 		this.kysymysTyyppi = kysymysTyyppi;
 	}
 	
-	public Kysymys(String question, String kysymysTyyppi, Kysely kysely) {
+	public Kysymys(String kysymysSisus, String kysymysTyyppi, Kysely kysely) {
 		super();
-		this.question = question;
+		this.kysymysSisus = kysymysSisus;
 		this.kysymysTyyppi = kysymysTyyppi;
 		this.kysely = kysely;
 	}
 	
-	public Kysymys(String question, String kysymysTyyppi, Kysely kysely, List<Vaihtoehto> vaihtoehdot) {
+	public Kysymys(String kysymysSisus, String kysymysTyyppi, Kysely kysely, List<Vaihtoehto> vaihtoehdot) {
 		super();
-		this.question = question;
+		this.kysymysSisus = kysymysSisus;
 		this.kysymysTyyppi = kysymysTyyppi;
 		this.kysely = kysely;
 		this.vaihtoehdot = vaihtoehdot;
@@ -102,8 +102,8 @@ public class Kysymys {
 		return kysymysId;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getKysymysSisus() {
+		return kysymysSisus;
 	}
 
 
@@ -112,8 +112,8 @@ public class Kysymys {
 	}
 
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setKysymysSisus(String kysymysSisus) {
+		this.kysymysSisus = kysymysSisus;
 	}
 	
 	public List<Vaihtoehto> getVaihtoehdot() {
@@ -128,8 +128,8 @@ public class Kysymys {
 	@Override
 	public String toString() {
 		if(this.kysely != null) 
-			return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi + ", kysely=" + kysely + "]";
-		else return "Kysymys [kysymysId=" + kysymysId + ", question=" + question + ", kysymysTyyppi=" + kysymysTyyppi;
+			return "Kysymys [kysymysId=" + kysymysId + ", kysymysSisus=" + kysymysSisus + ", kysymysTyyppi=" + kysymysTyyppi + ", kysely=" + kysely + "]";
+		else return "Kysymys [kysymysId=" + kysymysId + ", kysymysSisus=" + kysymysSisus + ", kysymysTyyppi=" + kysymysTyyppi;
 	}
 
 	
