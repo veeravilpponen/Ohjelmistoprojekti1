@@ -4,17 +4,11 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-
 
 @Entity
 public class Kysely {
@@ -24,7 +18,6 @@ public class Kysely {
 	private Long kyselyId;
 	
 	private String kyselyNimi;
-	
 	 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysely")
 	@JsonManagedReference
@@ -68,7 +61,4 @@ public class Kysely {
 		return "Kysely [kyselyId=" + kyselyId + ", kyselyNimi=" + kyselyNimi;
 	}
 
-	
-	
-	
 }

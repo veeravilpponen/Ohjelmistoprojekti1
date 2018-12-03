@@ -33,15 +33,40 @@ public class KyselyApplication {
 			kyselyrepository.save(new Kysely("Open"));
 			
 			log.info("save questions");
-			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista kofeiinituotteita?", "Valinta", kyselyrepository.findByKyselyNimi("Kahvi")));
-			kysymysrepository.save(new Kysymys("Mitä kofeiinituotteita käytät?", "Monivalinta", kyselyrepository.findByKyselyNimi("Kahvi")));
+		
+			kysymysrepository.save(new Kysymys("Minkä ikäinen olet?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Mitä opiskelet?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Ostatko Haaga-Helian tiloista kofeiinituotteita?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Oletko tyytyväinen nykyiseen Haaga-Helian kofeiinituotetarjontaan?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
 			kysymysrepository.save(new Kysymys("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
-
-
+			kysymysrepository.save(new Kysymys("Mitä kofeiinituotteita käytät?", "Checkbox", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Käytätkö jotain muita virkistystuotteita?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Oletko merkkiuskollinen jollekin tietylle kofeiinivirkistystuotemerkille, mille?", "Teksti", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Kuinka paljon käyttömääräsi muuttuisi, mikäli tuotteet olisivat halvempia?", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Kofeiinituotteiden eettisyys merkitsee minulle paljon.", "Radio", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Käyttäisitkö omaa takeaway-mukia?", "Checkbox", kyselyrepository.findByKyselyNimi("Kahvi")));
+			kysymysrepository.save(new Kysymys("Haluaisitko kahvipassin, jolla saisi alennuksia tai ilmaisen kahvin tietyn ostomäärän jälkeen?", "Checkbox", kyselyrepository.findByKyselyNimi("Kahvi")));
+			
 			vastausrepository.save(new Vastaus("Tarvitaan edullisempaa kahvia", kysymysrepository.findByKysymysSisus("Mitä Haaga-Helian nykyisessä palvelussa olisi parannettavaa?")));
-			vastausrepository.save(new Vastaus("", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
-			vastausrepository.save(new Vastaus("", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
-
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Alle 20", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("21-25", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("26-30", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("31-35", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("36-40", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("yli 41", kysymysrepository.findByKysymysSisus("Minkä ikäinen olet?")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Finanssi- ja talousasiantuntijan koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Hotelli- ja ravintola-alan liikkeenjohdon koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Journalismikoulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Liikunnan ja vapaa-ajan koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Matkailun koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Johdon assistenttityön ja kielten koulutus", kysymysrepository.findByKysymysSisus("Mitä opiskelet?")));
+			
 			
 			vaihtoehtorepository.save(new Vaihtoehto("En koskaan", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Harvoin", kysymysrepository.findByKysymysSisus("Ostatko Haaga-Helian tiloista kofeiinituotteita?")));
@@ -51,12 +76,6 @@ public class KyselyApplication {
 			vaihtoehtorepository.save(new Vaihtoehto("Tee", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Limu", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
 			vaihtoehtorepository.save(new Vaihtoehto("Kofeiinitabletit", kysymysrepository.findByKysymysSisus("Mitä kofeiinituotteita käytät?")));
-			
-			
-		
-		
-			
-		
 	
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {

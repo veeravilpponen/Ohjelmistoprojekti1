@@ -11,15 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import springpower.kysely.domain.Kysely;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
 import springpower.kysely.domain.Valittu;
 import springpower.kysely.domain.ValittuRepository;
 import springpower.kysely.domain.Vastaus;
 import springpower.kysely.domain.VastausRepository;
-
 
 @CrossOrigin
 @Controller
@@ -30,7 +27,6 @@ public class VastausController {
 	
 	@Autowired
 	private KysymysRepository kysymysRepository;
-	
 	
 	@Autowired
 	private ValittuRepository valittuRepository;
@@ -46,7 +42,6 @@ public class VastausController {
 	 // tallentaa vastauksen mutta ei saa kysymysId:tä mukaan
     @RequestMapping(value="/vastaukset", method =  RequestMethod.POST )
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
-    	
     	
     	vastausRepository.save(vastaus);
     	System.out.println("VASTAUS " + vastaus);
@@ -84,8 +79,7 @@ public class VastausController {
     	vastaus.setKysymys(kysymys);
     	vastausRepository.save(vastaus);
     	System.out.println("VASTAUS " + vastaus);
-    	
-    	// EI VIELÄ TESTATTU
+
     	// jos monivalintavastaus tallennetaan valitut kantaan rating.setBeer(beer);
     	List<Valittu> valitut = vastaus.getValitutVastaukset();
     	System.out.println("Valitut VASTAUKSET!" + valitut);
@@ -101,8 +95,6 @@ public class VastausController {
     	return vastaus;
     
         }
-
-    
     
     /** näyttää kaikki  kysymyksen vastaukset kysymyksen Id:n perusteella **/
 	@RequestMapping(value="/kysymykset/{kysymysId}", method = RequestMethod.GET)

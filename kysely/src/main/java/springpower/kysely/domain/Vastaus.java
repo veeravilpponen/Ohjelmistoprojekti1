@@ -10,10 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Vastaus {
@@ -24,15 +21,14 @@ public class Vastaus {
 	
 	private String vastausSisus;
 
-	 @ManyToOne
-	 @JoinColumn(name = "kysymysId")
-	 @JsonBackReference
-	 private Kysymys kysymys;
+	@ManyToOne
+	@JoinColumn(name = "kysymysId")
+	@JsonBackReference
+	private Kysymys kysymys;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "vastaus")
 	private List<Valittu> valitutVastaukset;
-	
-	
+
 	public Vastaus() {
 		super();
 		this.vastausSisus=null;
@@ -55,9 +51,7 @@ public class Vastaus {
 		this.kysymys = kysymys;
 		this.valitutVastaukset = valitutVastaukset;
 	}
-	
-	
-	
+
 	public Vastaus(List<Valittu> valitutVastaukset, Kysymys kysymys) {
 		super();
 		this.valitutVastaukset = valitutVastaukset;
@@ -72,7 +66,6 @@ public class Vastaus {
 	public List<Valittu> getValitutVastaukset() {
 		return valitutVastaukset;
 	}
-	
 	
 	// SETTERS
 	public void setVastausSisus(String vastausSisus) { this.vastausSisus = vastausSisus; }

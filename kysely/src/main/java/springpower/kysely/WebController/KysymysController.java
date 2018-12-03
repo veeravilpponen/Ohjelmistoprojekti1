@@ -10,14 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import springpower.kysely.domain.KyselyRepository;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
-import springpower.kysely.domain.Vaihtoehto;
-import springpower.kysely.domain.VaihtoehtoRepository;
-
-
 
 @CrossOrigin
 @Controller
@@ -25,10 +19,6 @@ public class KysymysController {
 	
 	@Autowired
 	private KysymysRepository kysymysRepository;
-	
-	@Autowired
-	private VaihtoehtoRepository vaihtoehtoRepository;
-	
 	
 	/** näyttää kaikki kysymykset tietokannasta **/
 	@RequestMapping(value="/kysymykset", method = RequestMethod.GET)
@@ -57,6 +47,4 @@ public class KysymysController {
 	}
 	*/
 	
-	
-
 }

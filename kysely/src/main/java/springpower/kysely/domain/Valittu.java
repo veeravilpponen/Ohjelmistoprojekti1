@@ -15,17 +15,15 @@ public class Valittu {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long valittuId;
 	
-	 private String valittuSisus;
+	private String valittuSisus;
 	 
-	 @ManyToOne
-	 @JoinColumn(name = "vastausId")
-	 @JsonIgnore
-	 private Vastaus vastaus;
-	 
-	
+	@ManyToOne
+	@JoinColumn(name = "vastausId")
+	@JsonIgnore
+	private Vastaus vastaus;
 
 	//Getter and Setters
-	 public String getValittuSisus() {
+	public String getValittuSisus() {
 		return valittuSisus;
 	}
 
@@ -41,7 +39,7 @@ public class Valittu {
 		this.vastaus = vastaus;
 	}
 	
-	 @Override
+	@Override
 		public String toString() {
 			return "Valittu [valittuId=" + valittuId + ", valittuSisus=" + valittuSisus + ", vastaus=" + vastaus + "]";
 		}
