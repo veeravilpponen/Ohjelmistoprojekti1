@@ -9,5 +9,4 @@ public interface VaihtoehtoRepository extends CrudRepository <Vaihtoehto, Long> 
 	/** Hakee vaihtoehdot kysymyksen perusteella **/
 	List<Vaihtoehto> findByKysymys(Kysymys kysymys);
 	
-	
 }

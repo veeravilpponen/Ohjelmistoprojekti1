@@ -1,22 +1,15 @@
 package springpower.kysely.domain;
 
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-
 
 @Entity
 public class Kysymys {
@@ -28,12 +21,10 @@ public class Kysymys {
 	private String kysymysSisus;
 	private String kysymysTyyppi;
 	
-	
-	 @ManyToOne
-	 @JoinColumn(name = "kyselyId")
-	 @JsonBackReference
-	 private Kysely kysely;
-	 
+	@ManyToOne
+	@JoinColumn(name = "kyselyId")
+	@JsonBackReference
+	private Kysely kysely;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
 	private List<Vaihtoehto> vaihtoehdot;
@@ -92,12 +83,10 @@ public class Kysymys {
 		return kysely;
 	}
 
-
 	public void setKysely(Kysely kysely) {
 		this.kysely = kysely;
 	}
 
-	
 	public Long getKysymysId() {
 		return kysymysId;
 	}
@@ -106,11 +95,9 @@ public class Kysymys {
 		return kysymysSisus;
 	}
 
-
 	public void setKysymyId(Long kysymysId) {
 		this.kysymysId = kysymysId;
 	}
-
 
 	public void setKysymysSisus(String kysymysSisus) {
 		this.kysymysSisus = kysymysSisus;
@@ -123,7 +110,6 @@ public class Kysymys {
 	public void setVaihtoehdot(List<Vaihtoehto> vaihtoehdot) {
 		this.vaihtoehdot = vaihtoehdot;
 	}
-
 
 	@Override
 	public String toString() {

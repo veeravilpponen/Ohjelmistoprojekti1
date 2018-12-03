@@ -18,8 +18,6 @@ import springpower.kysely.domain.KyselyRepository;
 import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
 
-
-
 @CrossOrigin
 @Controller
 public class KyselyController {
@@ -70,7 +68,5 @@ public class KyselyController {
 		
 		return kyselyRepository.findById(kyselyId );
     } 
-	
-	
 
 }
