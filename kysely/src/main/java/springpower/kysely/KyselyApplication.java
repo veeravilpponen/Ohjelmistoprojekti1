@@ -94,6 +94,26 @@ public class KyselyApplication {
 			vaihtoehtorepository.save(new Vaihtoehto("Harvemmin", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
 			vaihtoehtorepository.save(new Vaihtoehto("En osaa sanoa", kysymysrepository.findByKysymysSisus("Kuinka paljon käytät kyseisiä tuotteita koulupäivän aikana?")));
 			
+			vaihtoehtorepository.save(new Vaihtoehto("Ostaisin enemmän", kysymysrepository.findByKysymysSisus("Kuinka paljon käyttömääräsi muuttuisi, mikäli tuotteet olisivat halvempia?")));
+			vaihtoehtorepository.save(new Vaihtoehto("Hinta ei vaikuta käyttötottumuksiini", kysymysrepository.findByKysymysSisus("Kuinka paljon käyttömääräsi muuttuisi, mikäli tuotteet olisivat halvempia?")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Ei samaa eikä eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin samaa mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin samaa mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("En osaa sanoa", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden ekologisuus merkitsee minulle paljon.")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Ei samaa eikä eri mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Jokseenkin samaa mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("Täysin samaa mieltä", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			vaihtoehtorepository.save(new Vaihtoehto("En osaa sanoa", kysymysrepository.findByKysymysSisus("Kofeiinituotteiden eettisyys merkitsee minulle paljon.")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Kyllä", kysymysrepository.findByKysymysSisus("Käyttäisitkö omaa takeaway-mukia?")));
+			
+			vaihtoehtorepository.save(new Vaihtoehto("Kyllä", kysymysrepository.findByKysymysSisus("Haluaisitko kahvipassin, jolla saisi alennuksia tai ilmaisen kahvin tietyn ostomäärän jälkeen?")));
 			
 			log.info("fetch all questions");
 			for (Kysymys kysymys : kysymysrepository.findAll()) {
