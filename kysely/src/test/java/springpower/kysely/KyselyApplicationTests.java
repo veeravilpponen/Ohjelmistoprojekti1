@@ -13,5 +13,6 @@ public class KyselyApplicationTests {
 	public void contextLoads() {
 	}
 
+<<<<<<< HEAD
 }
 */
