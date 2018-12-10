@@ -25,6 +25,7 @@ public class LisaaKysymysController {
 	@RequestMapping(value = "/lisaakysymys", method = RequestMethod.GET)
 	public String lisaaKysymys(Model model) {
 		model.addAttribute("kysymys", new Kysymys());
+    	model.addAttribute("kysymykset", Kysymysrepository.findAll());
     	model.addAttribute("kyselyt", Kyselyrepository.findAll());
     	model.addAttribute("vaihtoehdot", Vaihtoehtorepository.findAll());
 		return "syottosivu";
