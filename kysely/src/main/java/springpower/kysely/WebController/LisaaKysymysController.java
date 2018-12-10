@@ -1,6 +1,7 @@
 package springpower.kysely.WebController;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +11,7 @@ import springpower.kysely.domain.Kysymys;
 import springpower.kysely.domain.KysymysRepository;
 import springpower.kysely.domain.VaihtoehtoRepository;
 
+@Controller
 public class LisaaKysymysController {
 	
 	@Autowired
