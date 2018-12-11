@@ -1,41 +1,89 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>kysely info</title>
+    <title>kysely infosivut</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/kysely.css}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
     	.container {}
     </style>
 </head>
 <body>
-	<div class="container" style="backgroundColor:pink">
-		<h1>Info</h1>
+	<div class="headingcontainer" >
+		<h1>Kysely Info</h1>
 		<h2>API End Pointit</h2>
-		
-		<h3>Kaikkien tietojen hakemista varten</h3>
+	</div>
+	
+	<div class="container" >
+		<h3>Kaikkien tietojen hakeminen</h3>
 		
 		<a href="/kyselyt/1/kysymykset">/kyselyt/1/kysymykset</a>
 		<p>RequestMethod.GET eli saa tiedot palvelimelta.</p>
 		<p>Näkee kyselyn nimen ja kaikki kyselyn kysymykset ja vastaukset mikäli niitä on tallennettu.</p>
-		<p>Numeron kohdalle laitetaan kyselyn id (Kahvi-kyselyn id=1) </p>
-		<br>
-		<br>
+		<p>Numeron kohdalle laitetaan kyselyn id. (Kahvi-kyselyn id=1) </p>
 		
-		<h3>Vastauksen lähetystä varten</h3>
+	</div>
+	
+	<div class="container" >
+		
+		<h3>Vastauksen lähettäminen</h3>
 		
 		<a href="/vastaukset">/vastaukset</a>
 		<p>RequestMethod.POST eli tallennusta varten</p>
-		<p> Tähän osoitteeseen voi lähettää kaikkkia vastaustyyppejä ja ne tallentuvat tietokantaan</p>
+		<p> Tähän osoitteeseen voi lähettää kaikkkia vastaustyyppejä ja ne tallentuvat tietokantaan.</p>
+		<p> Tästä osoitteesta voi myös hakea kaikki kyselyyn annetut vastaukset.</p>
 		
-		<h4>Teksti</h4>
-		<p>{"vastausSisus": "Tarvitaan edullisempaa kahvia", "kysymys":{"kysymysId": 5}}</p>
-		<h4>Checkbox</h4>
-		<p>{"kysymys":{"kysymysId": 4}, "valitutVastaukset": [{ "valittuSisus": "Kahvi"},{"valittuSisus": "Tee"}] }</p>
-	    <h4>Radio</h4>
-	    <p>{"kysymys":{"kysymysId": 3}, "valitutVastaukset": [{"valittuSisus": "Harvoin"}]}</p>
+		<div class="innercontainer" >
+			<h3>Teksti</h3>
+<pre><code>	{
+		"kysymys":{
+			"kysymysId": 5
+			},
+			"vastausSisus": "Tarvitaan edullisempaa kahvia"
+			}
+	}
+</code></pre>
+		</div>
+		<div class="innercontainer2" >
+			<h3>Checkbox</h3>
+<pre><code>
+
+{
+	"kysymys":{
+		"kysymysId": 4
+		}, 
+		"valitutVastaukset": [
+		{ 
+		"valittuSisus": "Kahvi"
+		},
+		{
+		"valittuSisus": "Tee"
+		}
+	] 
+}
+</code></pre>
+		
+		</div>
+		<div class="innercontainer2" >
+	    	<h3>Radio</h3>
+<pre> <code>
+
+{
+	"kysymys":{
+		"kysymysId": 3
+		},
+		"valitutVastaukset":[
+		{
+		"valittuSisus": "Harvoin"
+		}
+	]
+}</code></pre>
+	    	</div>
 		<br>
 		<br>
-		
+	</div>
+	
+	<div class="container" >
 		<h3>Extrat</h3>
 	   
 		<a href="/kysymykset/4/vastaukset">/kysymykset/4/vastaukset</a>
@@ -43,6 +91,9 @@
 		<p>Tästä linkistä näkee kysymyksen ja kaikki kysymykseen annetut vastaukset mikäli niitä on tallennettu.</p>
 		<br>
 		<br>
+		
+	</div>
+	
 	 
 	 <!-- 
 	 

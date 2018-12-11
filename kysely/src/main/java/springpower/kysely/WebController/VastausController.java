@@ -44,16 +44,13 @@ public class VastausController {
     public @ResponseBody Vastaus saveVastaus(@RequestBody Vastaus vastaus){
     	
     	vastausRepository.save(vastaus);
-    	System.out.println("VASTAUS " + vastaus);
     	
     	Kysymys kysymys = vastaus.getKysymys();
-    	System.out.println("VASTAUKSEN KYSYMYS " + kysymys);
     	vastaus.setKysymys(kysymys);
     	
     	// jos monivalintavastaus tallennetaan valitut kantaan 
     	if(vastaus.getValitutVastaukset() != null) {
     		List<Valittu> valitut = vastaus.getValitutVastaukset();
-        	System.out.println("Valitut VASTAUKSET!" + valitut);
         	
         	// valittujen vaihtoehtojen tallennus vastaukseen
         	for(int i = 0; i< valitut.size(); i++) {

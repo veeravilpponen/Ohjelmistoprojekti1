@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+html {
+	
+	background-color:rgb(158, 95, 9, 0.55);
+	font-family: 'Montserrat', Arial, sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: 'Montserrat', Arial, sans-serif;
+	background-color: white;
+	width: 100%;
+	margin: auto;
+	max-width: 1000px;
+	height: 100%;
+	position: relative;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0
+		rgba(0, 0, 0, .19);
+}
+
+.container {
+	width: 880px;
+	background-color: white;
+	margin: 10px auto;
+	position: relative;
+	padding-left: 40px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.headingcontainer {
+  
+  padding-top: 50px;
+  background-image: url('../images/kuva.jpg');
+  margin-bottom:25px;
+  width:1000px;
+  height:160px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  text-align: center;
+
+}
+
+.innercontainer {
+	float:left;
+	width: 830px;
+	border-radius: 5px;
+	border: solid 2px rgb(61, 48, 20);
+	margin-bottom: 15px ;
+	padding-left: 15px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+
+.innercontainer2 {
+	position: relative;
+	 display: inline-flex;
+	width: 390px;
+	height:350px;
+	border-radius: 5px;
+	border: solid 2px rgb(61, 48, 20);
+	margin-right: 20px ;
+	padding-left: 15px;
+	padding-right: 5px;
+	
+	padding-bottom: 5px;
+}
+
+
+h1 {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 80px;
+	padding: 0;
+	margin: 0 0 20px 0;
+	position: relative;
+	color: white;
+}
+
+h2 {
+	font-family: 'Montserrat', Arial, sans-serif;
+	text-align: center;
+	font-size: 28px;
+	padding: 0;
+	margin: 0 0 20px 0;
+	position: relative;
+	color: white;
+}
+
+code{
+	
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 18px;
+}
+
+
+
+@charset "ISO-8859-1";@charset "ISO-8859-1";

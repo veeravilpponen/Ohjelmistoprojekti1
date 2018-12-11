@@ -29,7 +29,8 @@ public class KyselyController {
 	@Autowired
 	private KysymysRepository kysymysRepository;
     
-    // palauttaa infosivun
+	
+	// palauttaa infosivun
 	@GetMapping({"/info", "/"})
 	public String info(Model model) {
 		
@@ -50,14 +51,6 @@ public class KyselyController {
 		return kysymysRepository.findByKysely(kysely );
     } 
 	
-	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
-	/*@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
-    public @ResponseBody List<Kysymys> kysymysById(@PathVariable("kyselyId") Long kyselyId)  {	
-		
-		Kysely kysely = kyselyRepository.findById(kyselyId).get();
-		
-		return (List<Kysymys>) kysymysRepository.findByKysely(kysely );
-    } */
 	
 	/** näyttää kaikki kysymykset kysely Id:n perusteella **/
 	@RequestMapping(value="/kyselyt/{kyselyId}/kysymykset", method = RequestMethod.GET)
